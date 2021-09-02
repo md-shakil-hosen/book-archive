@@ -6,48 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Archive</title>
+    <link rel="stylesheet" href="css/style.css">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/ea5253e049.js" crossorigin="anonymous"></script>
-    <style>
-        body {
-            background-color: #f1f2f4;
-        }
-
-        img {
-            height: 400px;
-            width: 100px;
-            border: 1px solid gray;
-            padding: 5px;
-        }
-
-        h2 {
-            color: #262626;
-            font-size: 1.5rem;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        }
-
-        h6 {
-            text-align: center;
-        }
-
-        button:hover {
-            background-color: hotpink;
-            color: white;
-            outline-color: hotpink;
-        }
-
-        #input-field {
-            border-radius: 20px 0 0 20px;
-        }
-    </style>
 </head>
 
 <body class="container align-content-center">
     <!--  book title section  -->
-    <h1 class="text-center text-success mt-3">BOOK ARCHIVE || FIND YOUR FAVORITE BOOK</h1>
+    <h1 class="text-center text-success mt-3">Book Archive <br> <span class="fs-5">Find Your Book</span>
+    </h1>
     <!-- input and button section -->
     <div class="input-group mb-1 w-50 mx-auto mt-5">
         <input id="input-field" type="text" class="form-control" placeholder="Enter Your Book Name"
@@ -55,6 +25,7 @@
         <button class="input-group-text" id="search-button" onclick="searchItem()"><i
                 class="fas fa-search"></i></button>
     </div>
+    <div id="error" class="text-center text-danger"></div>
     <!-- result div -->
     <div id="result"></div>
 

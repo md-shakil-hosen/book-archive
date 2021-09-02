@@ -1,9 +1,17 @@
+// Error Handling 
+const errorDiv = document.getElementById('error')
 let searchItem = () => {
     let result = document.getElementById('result')
     const searchBtn = document.getElementById('search-button')
     let inputField = document.getElementById('input-field')
     let inputData = inputField.value;
+    if (inputData === '') {
+        errorDiv.innerHTML = `<p>Field Can't be empty</p>`;
+        return;
+    }
+    // Clear input value 
     inputField.value = '';
+    // load data 
     let url = `http://openlibrary.org/search.json?q=${inputData}`;
     fetch(url)
         .then(res => res.json())
@@ -12,7 +20,13 @@ let searchItem = () => {
 // Show Display 
 const displayBook = books => {
     const bookField = document.getElementById('book-field');
+    bookField.innerHTML = '';
+    if (books.length === 0) {
+        errorDiv.innerHTML = `<p>No Result Found</p>`;
+        result.innerHTML = '';
+    }
     books.forEach(book => {
+        errorDiv.innerHTML = '';
         // Show Display Book Result 0 - 30
         result.innerHTML = `<h2 class = "text-center ">Search Result ${books.length} Found</h2>`;
         const div = document.createElement('div')
@@ -27,6 +41,6 @@ const displayBook = books => {
                 </div>
             `
         bookField.appendChild(div);
-
     });
 }
+
