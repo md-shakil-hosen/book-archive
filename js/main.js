@@ -12,7 +12,7 @@ let searchItem = () => {
     // Clear input value 
     inputField.value = '';
     // load data 
-    let url = `http://openlibrary.org/search.json?q=${inputData}`;
+    let url = `https://openlibrary.org/search.json?q=${inputData}`;
     fetch(url)
         .then(res => res.json())
         .then(data => displayBook(data.docs.slice(0, 50)))
