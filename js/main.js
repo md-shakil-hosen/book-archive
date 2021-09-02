@@ -20,6 +20,7 @@ let searchItem = () => {
 // Show Display 
 const displayBook = books => {
     const bookField = document.getElementById('book-field');
+    // Clear book field 
     bookField.innerHTML = '';
     if (books.length === 0) {
         errorDiv.innerHTML = `<p>No Result Found</p>`;
@@ -27,7 +28,7 @@ const displayBook = books => {
     }
     books.forEach(book => {
         errorDiv.innerHTML = '';
-        // Show Display Book Result 0 - 30
+        // Show Display Book Details and Result 0 - 30
         result.innerHTML = `<h2 class = "text-center ">Search Result ${books.length} Found</h2>`;
         const div = document.createElement('div')
         div.classList.add('col');
